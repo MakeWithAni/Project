@@ -166,7 +166,7 @@ font-weight: bolder;
     margin-top: 50px;
     display: flex;
 }
-.Book-now button{
+.Book-now .button{
     font-size: 50px;
     margin: auto;
 background-color:  orangered;
@@ -207,4 +207,40 @@ color:white
 }
 .lower-footer .right-copyright{
     color: white;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: orangered; /* Button color */
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3; /* Button color on hover */
+}
+
+.book{
+    display: flex;
+  padding: 150px 100px 0px 100px;
+  justify-content: space-around;
+
+}
+.right-book input{
+    width: 200px;
+    height: 30px;
+}
+.right-book label{
+    margin-top: 30px;
+}
+.left-book h3{
+    font-size: 50px;
+    font-weight: bold;
+}
+.right-book form{
+    padding: 10px 0px;
 }
