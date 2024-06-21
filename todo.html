@@ -121,7 +121,7 @@
     <!-- header end -->
     <div class="container">
         <h1>To-Do List</h1>
-        <button  onclick="checkCheckboxes()">Delete All</button>
+        <button  onclick="deleteall()">Delete All</button>
         <div class="todo-list">
            
         </div>
@@ -177,31 +177,20 @@
 
 
 
-        function checkCheckboxes() {
-           
-           const form = document.querySelectorAll("#new-task");
-
-
-           const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
-           
-           checkboxes.forEach((checkbox) => {
-               if (checkbox.checked) {
-                   console.log(`${checkbox.name} is checked with value: ${checkbox.value}`);
-                   const index = arr.findIndex(item => item.name === checkbox.name);
-                   if (index !== -1) {
-                        arr.splice(index, 1);
-                        showme() 
-                    }
-                   
-                    
-     
-               } else {
-                   console.log(`${checkbox.name} is not checked`);
-               }
-           });
-           console.log(arr);
-       }
+        function deleteall() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            let indicesToDelete = [];
+            checkboxes.forEach((checkbox, index) => {
+                if (checkbox.checked) {
+                    indicesToDelete.push(index);
+                }
+            });
+            for (let i = indicesToDelete.length - 1; i >= 0; i--) {
+                arr.splice(indicesToDelete[i], 1);
+            }
+            showme();
+        }
+       
   
     </script>
     <footer>
